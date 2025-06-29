@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Calculator</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Astro Love Calculator</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>💘 Love Calculator</h1>
-    
-    <form id="loveForm">
-      <label for="dob1">Your Date of Birth:</label>
-      <input type="date" id="dob1" required />
+    <div class="container">
+        <h1>💖 Astro Love Calculator 💖</h1>
+        <div class="form-box">
+            <label for="dob1">Date of Birth 1:</label>
+            <input type="date" id="dob1" required />
 
-      <label for="dob2">Partner's Date of Birth:</label>
-      <input type="date" id="dob2" required />
+            <label for="dob2">Date of Birth 2:</label>
+            <input type="date" id="dob2" required />
 
-      <button type="submit">Calculate</button>
-    </form>
+            <button onclick="calculateLove()">Calculate Love %</button>
+        </div>
 
-    <div id="result" class="result-section hidden">
-      <h2>❤️ Your Love Score: <span id="score">0%</span></h2>
-      <p id="message"></p>
+        <div id="result" class="result-box"></div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
