@@ -1,4 +1,4 @@
-/* Reset & Global */
+/* Reset and global styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body Styling */
+/* Body background and layout */
 body {
   background: linear-gradient(135deg, #d8f3dc, #ffd6ff);
   min-height: 100vh;
@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 
-/* Container */
+/* Main container with glass + neumorphism */
 .container {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 25px;
@@ -33,15 +33,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Title */
+/* Header styles */
 h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #4a0072;
   text-shadow: 1px 1px 2px #ffffffaa;
 }
 
-/* Subtext */
 .container p {
   font-style: italic;
   font-size: 0.95rem;
@@ -49,7 +48,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Form Box */
+/* Form styling */
 .form-box {
   display: flex;
   flex-direction: column;
@@ -57,13 +56,12 @@ h1 {
   text-align: left;
 }
 
-/* Labels */
 label {
   font-weight: 600;
   color: #4a0072;
 }
 
-/* Date Inputs */
+/* Input fields */
 input[type="date"] {
   padding: 0.6rem 1rem;
   border: none;
@@ -75,7 +73,7 @@ input[type="date"] {
   color: #333;
 }
 
-/* Button */
+/* Buttons */
 button {
   padding: 0.8rem;
   border: none;
@@ -94,7 +92,7 @@ button:hover {
   transform: scale(1.03);
 }
 
-/* Result Box */
+/* Result box */
 .result-box {
   margin-top: 2rem;
   padding: 1rem;
@@ -107,6 +105,17 @@ button:hover {
   font-weight: bold;
   color: #4a0072;
   transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+/* Zodiac card styles */
+.zodiac-card {
+  background: rgba(255,255,255,0.3);
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: inset 4px 4px 10px #ccc, inset -4px -4px 10px #fff;
+  width: 100px;
 }
 
 /* Footer */
@@ -123,6 +132,9 @@ footer {
   }
   h1 {
     font-size: 1.5rem;
+  }
+  .zodiac-card {
+    width: 80px;
   }
 }
 
@@ -153,3 +165,14 @@ footer {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+@keyframes hearts {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) scale(0.5);
+    opacity: 0;
+  }
+  }
