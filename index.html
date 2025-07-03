@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Astro Love Calculator</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💖 Astro Love Calculator 💖</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>💖 Astro Love Calculator 💖</h1>
-        <div class="form-box">
-            <label for="dob1">Date of Birth 1:</label>
-            <input type="date" id="dob1" required />
+  <main class="container">
+    <header>
+      <h1>💖 Astro Love Calculator 💖</h1>
+      <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem;">
+        Find your cosmic connection ✨
+      </p>
+    </header>
 
-            <label for="dob2">Date of Birth 2:</label>
-            <input type="date" id="dob2" required />
+    <section class="form-box" aria-label="Love Calculation Form">
+      <label for="dob1">Date of Birth – Person 1:</label>
+      <input type="date" id="dob1" name="dob1" required />
 
-            <button onclick="calculateLove()">Calculate Love %</button>
-        </div>
+      <label for="dob2">Date of Birth – Person 2:</label>
+      <input type="date" id="dob2" name="dob2" required />
 
-        <div id="result" class="result-box"></div>
-    </div>
+      <button onclick="calculateLove()">💌 Calculate Love %</button>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="result" class="result-box" aria-live="polite" role="region"></section>
+
+    <footer style="margin-top: 2rem; font-size: 0.8rem; color: #555;">
+      Made with ❤️ by Swarup
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
