@@ -3,28 +3,54 @@ function calculateLove() {
     const dob2 = document.getElementById("dob2").value;
     const resultBox = document.getElementById("result");
 
+    // Reset styles before calculation
+    resultBox.style.opacity = "0";
+    resultBox.style.transition = "opacity 0.8s ease-in-out";
+    resultBox.innerHTML = "";
+
     if (!dob1 || !dob2) {
-        resultBox.textContent = "Please enter both dates!";
+        resultBox.innerHTML = `<span style="color: crimson;">❗ Please enter both dates!</span>`;
+        resultBox.style.opacity = "1";
         return;
     }
 
-    // Convert DOBs to numbers (YYYYMMDD)
+    // Convert DOBs to numbers
     const num1 = Number(dob1.replace(/-/g, ""));
     const num2 = Number(dob2.replace(/-/g, ""));
 
-    // Calculate a compatibility score using numerology-like method
     const sumDigits = (n) => n.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
-
     let loveScore = sumDigits(num1) + sumDigits(num2);
     loveScore = (loveScore * 7) % 101;
 
-    // Fun messages
-    let message = "";
-    if (loveScore > 90) message = "💘 Made for each other!";
-    else if (loveScore > 75) message = "😍 Strong connection!";
-    else if (loveScore > 50) message = "😊 Good vibes!";
-    else if (loveScore > 30) message = "🙂 Worth knowing each other!";
-    else message = "😅 Friendship may be a better option!";
+    // Messages and colors
+    let message = "", color = "";
+    if (loveScore > 90) {
+        message = "💘 Made for each other!";
+        color = "#ff4d6d";
+    } else if (loveScore > 75) {
+        message = "😍 Strong connection!";
+        color = "#ff85a2";
+    } else if (loveScore > 50) {
+        message = "😊 Good vibes!";
+        color = "#ffaa66";
+    } else if (loveScore > 30) {
+        message = "🙂 Worth knowing each other!";
+        color = "#f7b731";
+    } else {
+        message = "😅 Friendship may be a better option!";
+        color = "#888";
+    }
 
-    resultBox.innerHTML = `Love Compatibility: <strong>${loveScore}%</strong><br>${message}`;
+    // Render result with styling
+    resultBox.innerHTML = `
+        <div style="color: ${color}; font-size: 1.4rem;">
+            ❤️ Love Compatibility: <strong>${loveScore}%</strong><br>
+            <span style="font-size: 1.1rem;">${message}</span>
+        </div>
+    `;
+
+    // Show result with fade-in
+    setTimeout(() => {
+        resultBox.style.opacity = "1";
+    }, 100);
 }
