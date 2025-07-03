@@ -2,33 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>💖 Astro Love Calculator 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💖 LoveCalc – Astro Love Compatibility 💖</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
     <header>
-      <h1>💖 Astro Love Calculator 💖</h1>
-      <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.95rem;">
-        Find your cosmic connection ✨
-      </p>
+      <h1>💖 LoveCalc</h1>
+      <p>Discover your cosmic compatibility ✨</p>
     </header>
 
     <section class="form-box" aria-label="Love Calculation Form">
-      <label for="dob1">Date of Birth – Person 1:</label>
+      <label for="dob1">🔹 Date of Birth – Person 1:</label>
       <input type="date" id="dob1" name="dob1" required />
 
-      <label for="dob2">Date of Birth – Person 2:</label>
+      <label for="dob2">🔹 Date of Birth – Person 2:</label>
       <input type="date" id="dob2" name="dob2" required />
 
-      <button onclick="calculateLove()">💌 Calculate Love %</button>
+      <button onclick="LoveCalc()">💌 Calculate Love %</button>
+      <button onclick="resetCalc()" style="margin-top: 0.5rem;">🔁 Reset</button>
     </section>
 
-    <section id="result" class="result-box" aria-live="polite" role="region"></section>
+    <section id="result" class="result-box" aria-live="polite" role="region">
+      <!-- Result appears here -->
+    </section>
 
-    <footer style="margin-top: 2rem; font-size: 0.8rem; color: #555;">
-      Made with ❤️ by Swarup
+    <footer>
+      Made with ❤️ by Swarup & the stars above ✨
     </footer>
   </main>
 
